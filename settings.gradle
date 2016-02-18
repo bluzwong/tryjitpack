@@ -1,1 +1,2 @@
+include ':libaar'
 include /*':app',*/ ':lib'
