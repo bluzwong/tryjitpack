@@ -1,5 +1,16 @@
 apply plugin: 'java'
+apply plugin: 'maven'
 
+group = 'com.github.bluzwong'
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
